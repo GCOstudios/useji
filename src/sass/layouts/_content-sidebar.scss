@@ -1,25 +1,67 @@
+// ===============================================================
+// Global page
+// ===============================================================
 .site {
-	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto ($size__site-sidebar);
 	grid-template-areas:
 		"header header"
 		"main sidebar"
 		"footer footer";
 }
 
-.site-header {
-	grid-area: header;
+.container {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
+// ===============================================================
+// Header Section
+// ===============================================================
+.site-header {
+  grid-area: header;
+  padding-top: 20px;
+
+  // This is only decorative
+  &::before {
+    content: '';
+    background-color: rgba(0,0,0,0.2);
+    box-shadow: 0 1px 20px rgba(0,0,0,0.2);
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+// ===============================================================
+// Main Section
+// ===============================================================
 .site-main {
 	grid-area: main;
 	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 }
 
+// ===============================================================
+// Sidebar Area
+// ===============================================================
 .widget-area {
 	grid-area: sidebar;
 }
 
+// ===============================================================
+// Footer Section
+// ===============================================================
 .site-footer {
 	grid-area: footer;
 }
