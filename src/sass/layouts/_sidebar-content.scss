@@ -1,15 +1,4 @@
-.site {
-	display: grid;
-	grid-template-columns: ($size__site-sidebar) auto;
-	grid-template-areas:
-		"header header"
-		"sidebar main"
-		"footer footer";
-}
-
-.site-header {
-	grid-area: header;
-}
+@import "header";
 
 .site-main {
 	grid-area: main;
@@ -20,8 +9,6 @@
 	grid-area: sidebar;
 }
 
-.site-footer {
-	grid-area: footer;
-}
+@import "footer";
 
 @import "no-sidebar";
